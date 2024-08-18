@@ -8,6 +8,6 @@ const login = async (req, res) => {
     return res.status(401).json({ message: "Email or password is wrong" });
   }
   const tokens = await createSessionAndTokens(user.id);
-  return res.status(200).json({ ...user._doc, ...tokens });
+  return res.status(200).json({ user: user._doc, ...tokens });
 };
 module.exports = login;

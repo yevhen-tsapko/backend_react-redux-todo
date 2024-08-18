@@ -16,6 +16,6 @@ const register = async (req, res) => {
   });
 
   const tokens = await createSessionAndTokens(newUser.id);
-  return res.status(200).json({ ...newUser._doc, tokens });
+  return res.status(200).json({ user: newUser._doc, tokens });
 };
 module.exports = register;
